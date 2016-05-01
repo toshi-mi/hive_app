@@ -1,0 +1,15 @@
+<h1><%= @question.title %></h1>
+<p><%= @question.content %></p>
+
+<h2>コメントをする</h2>
+<%= form_for(@comment) do |f| %>
+<%= f.text_area :content %>
+<%= f.submit '投稿する' %>
+<% end %>
+
+<h3>この投稿へのコメント一覧</h3>
+<ul>
+    <% @comments.each do |comment| %>
+    <li><%= comment.content %> by <%= comment.user.name %>さん</li>
+    <% end %>
+</ul>

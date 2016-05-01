@@ -6,6 +6,13 @@ Rails.application.routes.draw do
   root 'static_pages#top'
   
   resources :users
+  resources :questions
+  
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+  
+  post 'comments/:id' => 'comments#create' ,as: :comments
   
 
   # Example of regular route:

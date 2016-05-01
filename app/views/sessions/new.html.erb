@@ -1,0 +1,6 @@
+<h1>ログイン</h1>
+<%= form_for(:session, url: login_path) do |f| %>
+<p>メールアドレス</p>
+<%= f.email_field :email %>
+<p><%= f.submit 'ログイン' %></p>
+<% end %>

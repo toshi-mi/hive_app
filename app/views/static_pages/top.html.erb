@@ -1,3 +1,13 @@
+
+<% if session[:user_id] %>
 <h1>Hiveアプリ</h1>
 <p>このアプリは、Railsを使ってWebアプリを作ることができるようになる、練習ようのアプリです。</p>
-<%= link_to 'ユーザー一覧', users_path %>
+<%= link_to 'ユーザー一覧', users_path %> |
+<%= link_to '質問を作る', new_question_path %> |
+<%= link_to '質問一覧', questions_path %> |
+<%= link_to 'ログアウト', logout_path, method: :delete %>
+<% else %>
+<h1>Hiveアプリにようこそ！</h1>
+<%= link_to 'ログイン', login_path %> | <%= link_to '新規登録',
+new_user_path %>
+<% end %>
